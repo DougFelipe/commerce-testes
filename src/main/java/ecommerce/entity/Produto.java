@@ -38,6 +38,9 @@ public class Produto {
         this.tipo = tipo;
     }
 
+    public Produto(String produto, BigDecimal bigDecimal, int i) {
+    }
+
     // Getters e Setters
     public Long getId() {
         return id;

@@ -10,4 +10,13 @@ import ecommerce.external.IEstoqueExternal;
 
 @Service
 public class EstoqueSimulado implements IEstoqueExternal {
+    @Override
+    public EstoqueBaixaDTO darBaixa(List<Long> produtosIds, List<Long> produtosQuantidades) {
+        return null;
+    }
+
+    @Override
+    public DisponibilidadeDTO verificarDisponibilidade(List<Long> produtosIds, List<Long> produtosQuantidades) {
+        return null;
+    }
 }
