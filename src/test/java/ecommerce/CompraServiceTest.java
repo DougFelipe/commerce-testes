@@ -20,6 +20,8 @@ import ecommerce.entity.Cliente;
 import ecommerce.entity.ItemCompra;
 import ecommerce.entity.Produto;
 import ecommerce.entity.TipoCliente;
+import ecommerce.external.fake.EstoqueSimulado;
+import ecommerce.external.fake.PagamentoSimulado;
 import ecommerce.service.CarrinhoDeComprasService;
 import ecommerce.service.ClienteService;
 import ecommerce.service.CompraService;
@@ -35,9 +37,24 @@ class CompraServiceTest {
     @Mock
     private ClienteService clienteService;
 
+    @Mock 
+    private EstoqueSimulado estoqueExternal;
+
+    @Mock
+    private PagamentoSimulado pagamentoExternal;
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
+    }
+
+    @Test
+    void testDependenciasInjetadas() {
+    assertNotNull(compraService);
+    assertNotNull(carrinhoService);
+    assertNotNull(clienteService);
+    assertNotNull(estoqueExternal);
+    assertNotNull(pagamentoExternal);
     }
 
     @Test
